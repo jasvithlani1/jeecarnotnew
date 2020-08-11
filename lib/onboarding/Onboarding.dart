@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jeecarnot/home.dart';
+import 'package:jeecarnot/XRegisterbutton.dart';
+import 'package:jeecarnot/Xloginbutton.dart';
 
 class Welcome extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  final int _numPages = 3;
+  final int _numPages = 4;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
@@ -44,20 +45,8 @@ class _WelcomeState extends State<Welcome> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Container(
-                alignment: Alignment.centerRight,
-                child: FlatButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  ),
-                  child: Text(
-                    'Finish',
-                    style: TextStyle(
-                      color: Color(0xff2D2727),
-                      fontSize: 14.0,
-                    ),
-                  ),
-                ),
+                alignment: Alignment.topCenter,
+                child: Image.asset('assets/images/mainLogo.png'),
               ),
               Container(
                 height: 440.0,
@@ -79,8 +68,8 @@ class _WelcomeState extends State<Welcome> {
                         Center(
                             child: Image.asset(
                           'assets/images/workcalender.png',
-                          height: 180,
-                          width: 180,
+                          height: 250,
+                          width: 250,
                         )),
                         SizedBox(height: 40.0),
                         Container(
@@ -90,7 +79,7 @@ class _WelcomeState extends State<Welcome> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xff1E2222),
-                              fontSize: 32.0,
+                              fontSize: 20.0,
                               fontWeight: FontWeight.w600,
                               height: 1.3,
                             ),
@@ -109,8 +98,8 @@ class _WelcomeState extends State<Welcome> {
                           Center(
                               child: Image.asset(
                             'assets/images/workdesk.png',
-                            height: 180,
-                            width: 180,
+                            height: 250,
+                            width: 250,
                           )),
                           SizedBox(height: 40.0),
                           Container(
@@ -120,7 +109,7 @@ class _WelcomeState extends State<Welcome> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Color(0xff1E2222),
-                                fontSize: 32.0,
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.w600,
                                 height: 1.3,
                               ),
@@ -139,19 +128,50 @@ class _WelcomeState extends State<Welcome> {
                           ),
                           Center(
                               child: Image.asset(
-                            'assets/images/workffromhome.png',
-                            height: 180,
-                            width: 180,
+                            'assets/images/sofawork.png',
+                            height: 300,
+                            width: 300,
                           )),
-                          SizedBox(height: 40.0),
+                          SizedBox(height: 10.0),
                           Container(
                             alignment: Alignment.center,
                             child: Text(
-                              'Constant Motivation and Guidance',
+                              'One to One Mentorship',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Color(0xff1E2222),
-                                fontSize: 32.0,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w600,
+                                height: 1.3,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, right: 25),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 70,
+                          ),
+                          Center(
+                              child: Image.asset(
+                            'assets/images/mobilework.png',
+                            height: 250,
+                            width: 250,
+                          )),
+                          SizedBox(height: 30.0),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Constant Guidance and Motivation',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xff1E2222),
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.w600,
                                 height: 1.3,
                               ),
@@ -163,51 +183,29 @@ class _WelcomeState extends State<Welcome> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 110, right: 110),
-                child: Container(
-                  height: 45,
-                  child: RaisedButton(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                    onPressed: () {},
-                    textColor: Colors.white,
-                    color: Color(0xff00ED96),
-                    padding: const EdgeInsets.all(10.0),
-                    child: new Text(
-                      "Register",
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 110, right: 110),
-                child: Container(
-                  height: 45,
-                  child: RaisedButton(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                    onPressed: () {},
-                    textColor: Colors.white,
-                    color: Color(0xff00ED96),
-                    padding: const EdgeInsets.all(10.0),
-                    child: new Text(
-                      "Login",
-                    ),
-                  ),
-                ),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _buildPageIndicator(),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 110, right: 110),
+                child: Container(
+                  height: 45,
+                  child: XRegisterbutton(),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 110, right: 110),
+                child: Container(
+                  height: 45,
+                  child: Xloginbutton(),
+                ),
               ),
             ],
           ),

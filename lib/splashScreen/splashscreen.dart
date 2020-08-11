@@ -28,12 +28,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigateToHome() {
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => OnboardingPage()));
+        MaterialPageRoute(builder: (BuildContext context) => Welcome()));
   }
 
   void _navigateToLogin() {
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => OnboardingPage()));
+        MaterialPageRoute(builder: (BuildContext context) => Welcome()));
   }
 
   @override
