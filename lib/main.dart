@@ -11,6 +11,8 @@ import 'package:jeecarnot/login.dart';
 import 'package:jeecarnot/login1.dart';
 import 'package:jeecarnot/login2.dart';
 import 'package:jeecarnot/login3.dart';
+import 'package:jeecarnot/payment-denied.dart';
+import 'package:jeecarnot/payment-success.dart';
 import 'package:jeecarnot/splashScreen/splashscreen.dart';
 
 void main() => runApp(new MyApp());
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Application',
-      home: SplashScreen(),
+      home: PaymentDeny(),
       routes: {
         "/login": (ctx) => Login1(),
         "/login1": (ctx) => Login2(),
@@ -35,6 +37,8 @@ class MyApp extends StatelessWidget {
         "/register5": (ctx) => Register6(),
         "/register6": (ctx) => Register7(),
         "/homescreen": (ctx) => HomeScreen(),
+        "/paymentdone": (ctx) => PaymentSuccess(),
+        "/paymentdeny": (ctx) => PaymentDeny(),
       },
     );
   }
