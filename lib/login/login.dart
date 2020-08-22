@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Fadeanimation.dart';
+import 'package:jeecarnot/animation/Fadeanimation.dart';
 
 class Login1 extends StatefulWidget {
   @override

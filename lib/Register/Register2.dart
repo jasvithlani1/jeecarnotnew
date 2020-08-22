@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Fadeanimation.dart';
+import 'package:jeecarnot/animation/Fadeanimation.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 

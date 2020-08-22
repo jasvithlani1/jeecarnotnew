@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jeecarnot/Radiobutton1.dart';
-import 'radiobutton.dart';
+import 'package:jeecarnot/Widgets/Radiobutton/Radiobutton1.dart';
+import 'package:jeecarnot/Widgets/Radiobutton/radiobutton.dart';
 
 class Register6 extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jeecarnot/XRegisterbutton.dart';
-import 'package:jeecarnot/Xloginbutton.dart';
+import 'package:jeecarnot/Widgets/buttons/XRegisterbutton.dart';
+import 'package:jeecarnot/widgets/buttons/Xloginbutton.dart';
 
 class Welcome extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'Fadeanimation.dart';
+import 'package:jeecarnot/animation/Fadeanimation.dart';
 
 class Register4 extends StatefulWidget {
   @override
