@@ -6,24 +6,41 @@ import 'package:jeecarnot/Register/Register4.dart';
 import 'package:jeecarnot/Register/Register5.dart';
 import 'package:jeecarnot/Register/Register6.dart';
 import 'package:jeecarnot/Register/Register7.dart';
+import 'package:jeecarnot/Widgets/feedback1.dart';
+import 'package:jeecarnot/Widgets/feedback2.dart';
+import 'package:jeecarnot/Widgets/membershipcard.dart';
+import 'package:jeecarnot/dashboard/dashboard.dart';
+import 'package:jeecarnot/dashboard/feedback.dart';
 import 'package:jeecarnot/dashboard/home.dart';
-import 'package:jeecarnot/login.dart';
-import 'package:jeecarnot/login1.dart';
-import 'package:jeecarnot/login2.dart';
+import 'package:jeecarnot/dashboard/membership.dart';
+import 'package:jeecarnot/dashboard/physics.dart';
+import 'package:jeecarnot/dashboard/security.dart';
+import 'package:jeecarnot/login/login.dart';
+import 'package:jeecarnot/login/login1.dart';
+import 'package:jeecarnot/login/login2.dart';
 import 'package:jeecarnot/login/login3.dart';
 import 'package:jeecarnot/payment-denied.dart';
+import 'package:jeecarnot/dashboard/feedback.dart';
 import 'package:jeecarnot/payment-success.dart';
+import 'package:jeecarnot/dashboard/notification.dart';
 import 'package:jeecarnot/splashScreen/splashscreen.dart';
+import 'package:device_preview/device_preview.dart' as dp;
+import 'package:jeecarnot/utils/theme.dart';
+import 'package:jeecarnot/Widgets/chaptercard.dart';
+import 'package:jeecarnot/widgets/upgrade.dart';
 
 void main() => runApp(new MyApp());
+//runApp(dp.DevicePreview(builder: (context) => MyApp()));
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      builder: dp.DevicePreview.appBuilder,
+      theme: buildThemeData(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Application',
-      home: PaymentDeny(),
+      home: Security(),
       routes: {
         "/login": (ctx) => Login1(),
         "/login1": (ctx) => Login2(),
@@ -36,9 +53,10 @@ class MyApp extends StatelessWidget {
         "/register4": (ctx) => Register5(),
         "/register5": (ctx) => Register6(),
         "/register6": (ctx) => Register7(),
-        "/homescreen": (ctx) => HomeScreen(),
+        "/homescreen": (ctx) => Home(),
         "/paymentdone": (ctx) => PaymentSuccess(),
         "/paymentdeny": (ctx) => PaymentDeny(),
+        "/notification": (ctx) => Notifications(),
       },
     );
   }

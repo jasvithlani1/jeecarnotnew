@@ -16,6 +16,7 @@ class AvailableImages {
   static const studymaterial = AssetImage("assets/images/study-material.png");
   static const nomaterial = AssetImage('assets/images/Nomaterialfound.png');
   static const profilepicture = AssetImage('assets/images/profilepicture.png');
+  static const feedback = AssetImage('assets/images/feedback.png');
 }
 
 class Keys {
