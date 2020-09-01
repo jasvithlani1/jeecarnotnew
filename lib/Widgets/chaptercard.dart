@@ -88,7 +88,7 @@ class Chapter extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 20, 10, 0),
                         child: Text(
                           "Download",
                           style: TextStyle(

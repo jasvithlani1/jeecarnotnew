@@ -6,14 +6,24 @@ import 'package:jeecarnot/Register/Register4.dart';
 import 'package:jeecarnot/Register/Register5.dart';
 import 'package:jeecarnot/Register/Register6.dart';
 import 'package:jeecarnot/Register/Register7.dart';
+import 'package:jeecarnot/Register/Register8.dart';
+import 'package:jeecarnot/Widgets/courseplan.dart';
 import 'package:jeecarnot/Widgets/feedback1.dart';
 import 'package:jeecarnot/Widgets/feedback2.dart';
 import 'package:jeecarnot/Widgets/membershipcard.dart';
+import 'package:jeecarnot/Widgets/paymentcard.dart';
+import 'package:jeecarnot/dashboard/aboutus.dart';
 import 'package:jeecarnot/dashboard/dashboard.dart';
 import 'package:jeecarnot/dashboard/feedback.dart';
+import 'package:jeecarnot/dashboard/helpsupport.dart';
 import 'package:jeecarnot/dashboard/home.dart';
+import 'package:jeecarnot/dashboard/material1.dart';
 import 'package:jeecarnot/dashboard/membership.dart';
+import 'package:jeecarnot/dashboard/mentors.dart';
+import 'package:jeecarnot/dashboard/payment.dart';
+import 'package:jeecarnot/dashboard/personal.dart';
 import 'package:jeecarnot/dashboard/physics.dart';
+import 'package:jeecarnot/dashboard/requestmat1.dart';
 import 'package:jeecarnot/dashboard/security.dart';
 import 'package:jeecarnot/login/login.dart';
 import 'package:jeecarnot/login/login1.dart';
@@ -40,7 +50,7 @@ class MyApp extends StatelessWidget {
       theme: buildThemeData(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Application',
-      home: Security(),
+      home: Material1(),
       routes: {
         "/login": (ctx) => Login1(),
         "/login1": (ctx) => Login2(),
