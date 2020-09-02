@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jeecarnot/Widgets/app_bars/app_bars.dart';
 import 'package:jeecarnot/Widgets/drawer/drawer.dart';
+import 'package:jeecarnot/Widgets/feedback1.dart';
+import 'package:jeecarnot/dashboard/account.dart';
 import 'package:jeecarnot/dashboard/dashboard.dart';
+import 'package:jeecarnot/dashboard/feed.dart';
+import 'package:jeecarnot/dashboard/membership.dart';
+import 'package:jeecarnot/dashboard/studymaterial.dart';
 import 'package:jeecarnot/utils/colors.dart';
 import 'package:jeecarnot/utils/utils.dart';
 
@@ -30,8 +35,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     },
     {
       "title": "Study Material",
-      "imageicon": FontAwesomeIcons.bookOpen,
-      "view": null,
+      "imageicon": FontAwesomeIcons.book,
+      "view": Study(),
       "header": Text(
         "STUDY MATERIAL",
         style: TextStyle(color: whiteColor),
@@ -39,8 +44,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     },
     {
       "title": "Feedback",
-      "imageicon": FontAwesomeIcons.mailchimp,
-      "view": null,
+      "imageicon": Icons.mail,
+      "view": Feed(),
       "header": Text(
         "Feedback",
         style: TextStyle(color: whiteColor),
@@ -49,7 +54,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     {
       "title": "Account",
       "imageicon": Icons.person_outline,
-      "view": null,
+      "view": Account(),
       "header": Text(
         "ACCOUNT",
         style: TextStyle(color: whiteColor),
@@ -63,12 +68,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       key: _scaffoldKey,
       appBar: AppBars.defaultAppBar(
         openDrawer: () => _scaffoldKey.currentState.openDrawer(),
-        title: _tabs[_currentTab]['title'],
-        header: _tabs[_currentTab]['header'],
+        title: _tabs[_currentTab]["title"],
+        header: _tabs[_currentTab]["header"],
         actions: [
           IconButton(
               icon: GestureDetector(
-                onTap: () => Navigator.of(context).pushNamed('/notifications'),
+                onTap: () => Navigator.of(context).pushNamed('/notification'),
                 child: Icon(
                   Icons.call,
                   color: Colors.white,
@@ -77,7 +82,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               onPressed: () {}),
           IconButton(
             icon: GestureDetector(
-              onTap: () => Navigator.of(context).pushNamed('/call'),
+              onTap: () => Navigator.of(context).pushNamed('/notification'),
               child: Icon(
                 Icons.notifications,
                 color: Colors.white,
@@ -100,12 +105,21 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         items: _tabs
             .map<BottomNavigationBarItem>(
               (e) => BottomNavigationBarItem(
-                  icon: Icon(
-                e['imageicon'],
-                color: _currentTab == _tabs.indexOf(e)
-                    ? primaryColor
-                    : Colors.grey,
-              )),
+                icon: Icon(
+                  e['imageicon'],
+                  color: _currentTab == _tabs.indexOf(e)
+                      ? primaryColor
+                      : Colors.grey,
+                ),
+                title: Text(
+                  e['title'],
+                  style: TextStyle(
+                    color: _currentTab == _tabs.indexOf(e)
+                        ? primaryColor
+                        : Colors.grey,
+                  ),
+                ),
+              ),
             )
             .toList(),
         selectedLabelStyle: TextStyle(color: primaryColor),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jeecarnot/Widgets/Radiobutton/radio2.dart';
 import 'package:jeecarnot/Widgets/Radiobutton/radio3.dart';
+import 'package:jeecarnot/Widgets/buttons/flat_button.dart';
 import 'package:jeecarnot/Widgets/textfield/text_field.dart';
 import 'package:jeecarnot/utils/colors.dart';
 
@@ -96,6 +97,11 @@ class _Feed2State extends State<Feed2> {
                 child: Radio3(),
               ),
             ],
+          ),
+          ButtonDefault(
+            text: "CONTINUE",
+            onPressed: () {},
+            color: buttonColor,
           )
         ],
       ),

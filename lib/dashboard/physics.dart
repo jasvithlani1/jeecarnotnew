@@ -55,20 +55,36 @@ class _PhysicsState extends State<Physics> {
               ),
             ],
           ),
-          Container(
-            child: GridView.count(
-              crossAxisCount: 2,
-              primary: false,
-              padding: const EdgeInsets.all(20.0),
-              crossAxisSpacing: 10,
-              children: [
-                Chapter(
-                  topic: 'Electorstatic',
-                ),
-                Chapter(
-                  topic: 'Current',
-                ),
-              ],
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+            child: Container(
+              child: GridView.count(
+                crossAxisCount: 2,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Chapter(
+                      topic: "Electrostatics",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Chapter(topic: "Current"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Chapter(
+                      topic: "Motion",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Chapter(
+                      topic: "Newton",
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],

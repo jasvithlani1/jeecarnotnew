@@ -14,37 +14,12 @@ class Chapter extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
           child: Container(
               color: Colors.grey[100],
-              width: 180,
-              height: 180,
+              width: MediaQuery.of(context).size.width / 2.75,
+              height: MediaQuery.of(context).size.height / 4.25,
               child: Column(
                 children: [
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                          height: 10,
-                          width: 20,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(8.0),
-                              gradient: LinearGradient(colors: [
-                                Colors.red[200],
-                                Colors.grey,
-                              ])),
-                          child: Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              "NEW",
-                              style: TextStyle(
-                                fontSize: 6,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          )),
-                    ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Image.asset("assets/images/science.png"),
                   Row(

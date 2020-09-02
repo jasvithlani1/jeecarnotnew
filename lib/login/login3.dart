@@ -108,7 +108,7 @@ class _Login4State extends State<Login4> {
                           GestureDetector(
                             onTap: () {
                               Navigator.of(context)
-                                  .pushReplacementNamed('/homescreen');
+                                  .pushReplacementNamed('/dashboard');
                             },
                             child: Container(
                               height: 50,

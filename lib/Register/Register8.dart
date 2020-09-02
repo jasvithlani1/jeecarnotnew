@@ -56,7 +56,11 @@ class _Register8State extends State<Register8> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CustomCard(),
+                    child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/paymentdone');
+                        },
+                        child: CustomCard()),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),

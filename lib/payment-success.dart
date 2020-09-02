@@ -1,4 +1,7 @@
 import "package:flutter/material.dart";
+import "dart:async";
+
+import 'package:jeecarnot/dashboard/home.dart';
 
 class PaymentSuccess extends StatefulWidget {
   @override
@@ -7,7 +10,30 @@ class PaymentSuccess extends StatefulWidget {
 
 class _PaymentSuccessState extends State<PaymentSuccess> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startTime();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      body: initScreen(context),
+    );
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 6);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => DashBoardScreen()));
+  }
+
+  initScreen(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[

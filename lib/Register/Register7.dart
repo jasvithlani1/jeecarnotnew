@@ -191,7 +191,7 @@ class _Register7State extends State<Register7> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pushReplacementNamed("/register3");
+              Navigator.of(context).pushReplacementNamed("/register7");
             },
             child: Container(
               height: 50,

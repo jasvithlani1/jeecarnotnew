@@ -18,47 +18,6 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 35,
-                  backgroundColor: buttonColor,
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage:
-                        AssetImage('assets/images/profilepicture1.jpg'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Akash Mishra',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: 2,
-              width: MediaQuery.of(context).size.width / 1.15,
-              color: Colors.black,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
             child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Text(
                 "Level of Effort: ",
