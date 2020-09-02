@@ -6,8 +6,10 @@ class Study extends StatefulWidget {
   _StudyState createState() => _StudyState();
 }
 
-class _StudyState extends State<Study> {
+class _StudyState extends State<Study> with SingleTickerProviderStateMixin {
   TabController _tabController;
+  // TODO: this should be initialized in the initState
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +34,7 @@ class _StudyState extends State<Study> {
               indicatorSize: TabBarIndicatorSize.tab,
             ),
           ),
+          // TODO: use the tab controller in tab bar view to solve it
           Expanded(child: TabBarView(children: []))
         ],
       ),
