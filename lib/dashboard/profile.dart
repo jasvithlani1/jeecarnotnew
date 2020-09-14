@@ -44,13 +44,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
               labelColor: Colors.white,
               tabs: [
                 new Tab(
-                  text: "Membership",
+                  text: "Personel",
                 ),
                 new Tab(
-                  text: "Security",
+                  text: "Education",
                 ),
                 new Tab(
-                  text: "Account History",
+                  text: "About us",
                 )
               ],
               controller: _tabController,

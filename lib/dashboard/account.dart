@@ -37,7 +37,7 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
                 )
               ],
               controller: _tabController,
-              indicatorColor: Colors.white,
+              indicatorColor: buttonColor,
               indicatorSize: TabBarIndicatorSize.tab,
             ),
           ),

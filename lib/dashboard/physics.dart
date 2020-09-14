@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jeecarnot/Widgets/courseplan.dart';
 import 'package:jeecarnot/utils/colors.dart';
 import 'package:jeecarnot/Widgets/chaptercard.dart';
 
@@ -61,27 +62,11 @@ class _PhysicsState extends State<Physics> {
               child: GridView.count(
                 crossAxisCount: 2,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Chapter(
-                      topic: "Electrostatics",
-                    ),
+                  Chapter(
+                    topic: 'current',
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Chapter(topic: "Current"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Chapter(
-                      topic: "Motion",
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Chapter(
-                      topic: "Newton",
-                    ),
+                  Chapter(
+                    topic: 'motion',
                   )
                 ],
               ),
