@@ -36,11 +36,13 @@ import 'package:jeecarnot/Register/payment-success.dart';
 import 'package:jeecarnot/dashboard/feedback.dart';
 import 'package:jeecarnot/Register/payment-denied.dart';
 import 'package:jeecarnot/dashboard/notification.dart';
+import 'package:jeecarnot/providers/auth.dart';
 import 'package:jeecarnot/splashScreen/splashscreen.dart';
 import 'package:device_preview/device_preview.dart' as dp;
 import 'package:jeecarnot/utils/theme.dart';
 import 'package:jeecarnot/Widgets/chaptercard.dart';
 import 'package:jeecarnot/widgets/upgrade.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(new MyApp());
 //runApp(dp.DevicePreview(builder: (context) => MyApp()));
@@ -49,32 +51,41 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: wrap it with providers
-    return new MaterialApp(
-      builder: dp.DevicePreview.appBuilder,
-      theme: buildThemeData(),
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Application',
-      home: SplashScreen(),
-      routes: {
-        "/login": (ctx) => Login1(),
-        "/login1": (ctx) => Login2(),
-        "/login2": (ctx) => Login3(),
-        "/login3": (ctx) => Login4(),
-        "/register": (ctx) => Register(),
-        "/register1": (ctx) => Register2(),
-        "/register2": (ctx) => Register3(),
-        "/register3": (ctx) => Register4(),
-        "/register4": (ctx) => Register5(),
-        "/register5": (ctx) => Register6(),
-        "/register6": (ctx) => Register7(),
-        "/register7": (ctx) => Register8(),
-        "/dashboard": (ctx) => DashBoardScreen(),
-        "/paymentdone": (ctx) => PaymentSuccess(),
-        "/paymentdeny": (ctx) => PaymentDeny(),
-        "/notification": (ctx) => Notifications(),
-        "/mentor": (ctx) => Mentor(),
-        "/profile": (ctx) => Profile(),
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: Auth(),
+        ),
+      ],
+      child: Consumer<Auth>(
+        builder: (ctx, auth, _) => MaterialApp(
+          builder: dp.DevicePreview.appBuilder,
+          theme: buildThemeData(),
+          debugShowCheckedModeBanner: false,
+          title: 'JEECARNOT',
+          home: SplashScreen(),
+          routes: {
+            "/login": (ctx) => Login1(),
+            "/login1": (ctx) => Login2(),
+            "/login2": (ctx) => Login3(),
+            "/login3": (ctx) => Login4(),
+            "/register": (ctx) => Register(),
+            "/register1": (ctx) => Register2(),
+            "/register2": (ctx) => Register3(),
+            "/register3": (ctx) => Register4(),
+            "/register4": (ctx) => Register5(),
+            "/register5": (ctx) => Register6(),
+            "/register6": (ctx) => Register7(),
+            "/register7": (ctx) => Register8(),
+            "/dashboard": (ctx) => DashBoardScreen(),
+            "/paymentdone": (ctx) => PaymentSuccess(),
+            "/paymentdeny": (ctx) => PaymentDeny(),
+            "/notification": (ctx) => Notifications(),
+            "/mentor": (ctx) => Mentor(),
+            "/profile": (ctx) => Profile(),
+          },
+        ),
+      ),
     );
   }
 }

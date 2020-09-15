@@ -151,17 +151,29 @@ class _Login1State extends State<Login1> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child:
-                                  Image.asset("assets/images/facebook-2.png"),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.white,
+                                child:
+                                    Image.asset("assets/images/facebook-2.png"),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child:
-                                  Image.asset("assets/images/google-icon.png"),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                    "assets/images/google-icon.png"),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Image.asset("assets/images/mail.png"),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.white,
+                                child: Image.asset("assets/images/mail.png"),
+                              ),
                             )
                           ],
                         ),

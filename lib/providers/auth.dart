@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:flutter/foundation.dart';
 import '../models/http_exception.dart';
 
 class Auth with ChangeNotifier {
@@ -123,3 +123,17 @@ class Auth with ChangeNotifier {
     _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
   }
 }
+
+_generateOTP() async {  // set up POST request arguments
+  String url = 'https://POST /mentee/register/api/send-otp';
+  Map<String, String> headers = {"Content-type": "application/json"};
+  String json = '{"name": "Hello", "email" : "jeecarnot@gmail.com", "password" : "body_text"}';  // make POST request
+  Response response = await post(url, headers: headers, body: json);  // check the status code for the result
+  int statusCode = response.statusCode;  // this API passes back the id of the new item added to the body
+  String body = response.body;
+  {
+    "name": "Hello",
+    "phone": "7300287130",
+    "email": "jeecarnot@gmail.com",
+    "password": "body_text",
+  }}

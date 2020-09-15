@@ -124,7 +124,7 @@ class _WelcomeState extends State<Welcome> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           SizedBox(
-                            height: 70,
+                            height: 40,
                           ),
                           Center(
                               child: Image.asset(
@@ -188,7 +188,7 @@ class _WelcomeState extends State<Welcome> {
                 children: _buildPageIndicator(),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 70, left: 110, right: 110),
+                padding: const EdgeInsets.only(top: 20, left: 110, right: 110),
                 child: Container(
                   height: 45,
                   child: XRegisterbutton(),
