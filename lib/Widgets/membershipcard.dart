@@ -9,7 +9,7 @@ class MemberCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 1.3,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(30),
       ),
       child: Card(
         shadowColor: Colors.blueGrey,

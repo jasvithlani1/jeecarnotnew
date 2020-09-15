@@ -187,11 +187,8 @@ class _WelcomeState extends State<Welcome> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _buildPageIndicator(),
               ),
-              SizedBox(
-                height: 20,
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 110, right: 110),
+                padding: const EdgeInsets.only(top: 70, left: 110, right: 110),
                 child: Container(
                   height: 45,
                   child: XRegisterbutton(),

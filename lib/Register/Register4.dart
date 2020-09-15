@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jeecarnot/animation/Fadeanimation.dart';
+import 'package:jeecarnot/utils/colors.dart';
 
 class Register4 extends StatefulWidget {
   @override
@@ -40,22 +42,10 @@ class _Register4State extends State<Register4> {
           SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: 20),
-                Align(
-                    alignment: Alignment.topCenter,
-                    child: Image.asset('assets/images/mainLogo.png')),
-                SizedBox(
-                  height: 20,
-                ),
-                Image.asset('assets/images/workdesk.png')
-              ],
-            ),
+          SizedBox(
+            height: 20,
           ),
+          Image.asset('assets/images/workdesk.png'),
           SizedBox(
             height: 20,
           ),
@@ -79,23 +69,24 @@ class _Register4State extends State<Register4> {
                         Container(
                           child: Column(
                             children: <Widget>[
-                              Stack(
-                                children: <Widget>[
-                                  Container(
-                                    margin: EdgeInsets.all(100.0),
-                                    decoration: BoxDecoration(
-                                        color: Colors.orange,
-                                        shape: BoxShape.circle),
-                                  ),
-                                  Center(
-                                    child: Image.asset(
-                                      "assets/images/tick.png",
-                                      width: 150,
-                                      height: 150,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              Center(
+                                  child: Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+                                child: CircleAvatar(
+                                    radius: 40,
+                                    backgroundColor: Colors.white,
+                                    child: Container(
+                                      height: 40,
+                                      width: 40,
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.check,
+                                          color: primaryColor,
+                                          size: 40,
+                                        ),
+                                      ),
+                                    )),
+                              )),
                               SizedBox(
                                 height: 10,
                               ),

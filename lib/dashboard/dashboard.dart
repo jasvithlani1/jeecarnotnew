@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
     fontSize: 18,
     fontFamily: 'Montserrat',
     color: primaryColor,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
   );
   @override
   Widget build(BuildContext context) {
