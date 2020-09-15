@@ -144,6 +144,9 @@ class Register2 extends StatelessWidget {
                             1.6,
                             GestureDetector(
                               onTap: () {
+                                // TODO: trigger verify otp API request here,
+                                // if succeeds, then navigate
+                                // else, show error
                                 Navigator.of(context)
                                     .pushReplacementNamed('/register2');
                               },

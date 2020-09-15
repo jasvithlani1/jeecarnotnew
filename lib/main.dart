@@ -48,6 +48,7 @@ void main() => runApp(new MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: wrap it with providers
     return new MaterialApp(
       builder: dp.DevicePreview.appBuilder,
       theme: buildThemeData(),

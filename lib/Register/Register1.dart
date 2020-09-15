@@ -161,6 +161,7 @@ class _RegisterState extends State<Register> {
               ),
               FlatButton(
                 onPressed: () {
+                  // TODO: trigger otp request API here
                   Navigator.of(context).pushReplacementNamed("/register1");
                 },
                 shape: RoundedRectangleBorder(
