@@ -121,10 +121,8 @@ class Auth with ChangeNotifier {
     }
     final timeToExpiry = _expiryDate.difference(DateTime.now()).inSeconds;
     _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
-  }
-}
 
-_generateOTP() async {  // set up POST request arguments
+    _generateOTP() async {  // set up POST request arguments
   String url = 'https://POST /mentee/register/api/send-otp';
   Map<String, String> headers = {"Content-type": "application/json"};
   String json = '{"name": "Hello", "email" : "jeecarnot@gmail.com", "password" : "body_text"}';  // make POST request
@@ -137,3 +135,7 @@ _generateOTP() async {  // set up POST request arguments
     "email": "jeecarnot@gmail.com",
     "password": "body_text",
   }}
+  }
+
+}
+
