@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jeecarnot/utils/colors.dart';
+import 'package:jeecarnot/providers/auth.dart';
+import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -162,7 +164,9 @@ class _RegisterState extends State<Register> {
               FlatButton(
                 onPressed: () {
                   // TODO: trigger otp request API here
-                  Navigator.of(context).pushReplacementNamed("/register1");
+                   Provider.of<Auth>(context , listen: false)._generateOTP{
+                     
+                   }
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),

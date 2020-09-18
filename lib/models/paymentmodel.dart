@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-
-class paymentdetailsmodel {
+class Paymentdetailsmodel {
   List<Payments> payments;
 
-  paymentdetailsmodel({this.payments});
+  Paymentdetailsmodel({this.payments});
 
-  paymentdetailsmodel.fromJson(Map<String, dynamic> json) {
+  Paymentdetailsmodel.fromJson(Map<String, dynamic> json) {
     if (json['payments'] != null) {
       payments = new List<Payments>();
       json['payments'].forEach((v) {

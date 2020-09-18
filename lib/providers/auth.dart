@@ -123,14 +123,14 @@ class Auth with ChangeNotifier {
     _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
 
 // TODO: call this function from the screen, after the user taps on "send otp"
-    _generateOTP() async {
+    _generateOTP(String name, String email, String password) async {
       // set up POST request arguments
       // TODO: fix the URL here, this is not a valid URL
-      String url = 'https://POST /mentee/register/api/send-otp';
+      String url = ' http://89.107.63.135:3333/mentee/register/api/send-otp';
       Map<String, String> headers = {"Content-type": "application/json"};
       // TODO: the data below (name, email etc.) should be coming from the arguments passed to this function
       String json =
-          '{"name": "Hello", "email" : "jeecarnot@gmail.com", "password" : "body_text"}'; // make POST request
+          '{"name": $name, "email" : "$email", "password" : "$password"}'; // make POST request
       http.Response response = await http.post(url,
           headers: headers, body: json); // check the status code for the result
       int statusCode = response

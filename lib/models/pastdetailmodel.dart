@@ -1,9 +1,9 @@
-class pastdetailmodel {
+class Pastdetailmodel {
   List<Pasttickets> pasttickets;
 
-  pastdetailmodel({this.pasttickets});
+  Pastdetailmodel({this.pasttickets});
 
-  pastdetailmodel.fromJson(Map<String, dynamic> json) {
+  Pastdetailmodel.fromJson(Map<String, dynamic> json) {
     if (json['pasttickets'] != null) {
       pasttickets = new List<Pasttickets>();
       json['pasttickets'].forEach((v) {
