@@ -13,6 +13,8 @@ class _RegisterState extends State<Register> {
   String name = "";
   @override
   Widget build(BuildContext context) {
+    // Provider.of<Auth>(context, listen: false)
+    //     .generateOTP("name", "email", "password");
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
@@ -163,10 +165,9 @@ class _RegisterState extends State<Register> {
               ),
               FlatButton(
                 onPressed: () {
-                  // TODO: trigger otp request API here
-                   Provider.of<Auth>(context , listen: false)._generateOTP{
-                     
-                   }
+                  // TODO: pass the variables in the following function
+                  Provider.of<Auth>(context, listen: false)
+                      .generateOTP("name", "email", "password");
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
