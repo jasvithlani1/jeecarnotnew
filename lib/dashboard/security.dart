@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:jeecarnot/Widgets/buttons/flat_button.dart';
 import 'package:jeecarnot/utils/colors.dart';
+import 'package:jeecarnot/models/InputModel.dart';
+import 'package:http/http.dart' as http;
 
-class Security extends StatelessWidget {
+class Security extends StatefulWidget {
+  @override
+  _SecurityState createState() => _SecurityState();
+}
+
+Future<SecurityModel> createSecurity(
+    String oldpassword, String newpassword) async {
+  final String url = "";
+
+  final response = await http.put(url, body: {
+    "oldpassword": oldpassword,
+    "newpassword": newpassword,
+  });
+  if (response.statusCode == 201) {
+    final String responseString = response.body;
+    return securityModelFromJson(responseString);
+  } else {
+    return null;
+  }
+}
+
+class _SecurityState extends State<Security> {
+  SecurityModel _security;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

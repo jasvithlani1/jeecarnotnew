@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:jeecarnot/utils/colors.dart';
 
 class Chapter extends StatelessWidget {
-  String topic;
-  Chapter({
-    this.topic,
-  });
+  String title;
+  String imgurl;
+  Chapter({this.title,
+  this.imgurl});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -19,7 +19,7 @@ class Chapter extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Image.asset("assets/images/science.png"),
+              Image.asset(imgurl),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -38,7 +38,7 @@ class Chapter extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      topic,
+                      title,
                       style: TextStyle(
                           fontSize: 20,
                           color: primaryColor,

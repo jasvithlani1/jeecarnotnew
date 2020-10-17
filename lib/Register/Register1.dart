@@ -10,6 +10,10 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final _controller = TextEditingController();
+  final _controller1 = TextEditingController();
+  final _controller2 = TextEditingController();
+  final _controller3 = TextEditingController();
+  final _controller4 = TextEditingController();
   String name = "";
   @override
   Widget build(BuildContext context) {
@@ -71,7 +75,7 @@ class _RegisterState extends State<Register> {
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: 38.0,
                   child: TextField(
-                    controller: _controller,
+                    controller: _controller1,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
@@ -92,7 +96,7 @@ class _RegisterState extends State<Register> {
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: 38.0,
                   child: TextField(
-                    controller: _controller,
+                    controller: _controller2,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
@@ -112,7 +116,7 @@ class _RegisterState extends State<Register> {
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: 38.0,
                   child: TextField(
-                    controller: _controller,
+                    controller: _controller3,
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.transparent),
@@ -134,7 +138,7 @@ class _RegisterState extends State<Register> {
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: 38.0,
                   child: TextField(
-                    controller: _controller,
+                    controller: _controller4,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),

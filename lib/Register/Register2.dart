@@ -3,6 +3,8 @@ import 'package:jeecarnot/animation/Fadeanimation.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:jeecarnot/utils/colors.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
+import 'package:jeecarnot/providers/auth.dart';
+import 'package:provider/provider.dart';
 
 class Register2 extends StatelessWidget {
   @override
@@ -147,8 +149,13 @@ class Register2 extends StatelessWidget {
                                 // TODO: trigger verify otp API request here,
                                 // if succeeds, then navigate
                                 // else, show error
-                                Navigator.of(context)
-                                    .pushReplacementNamed('/register2');
+                                if (Provider.of<Auth>(context, listen: false)
+                                        .generateOTP(
+                                            "name", "email", "password") ==
+                                    true) {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed('/register2');
+                                }
                               },
                               child: Container(
                                 height: 50,

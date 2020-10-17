@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jeecarnot/Widgets/todolist.dart';
 import 'package:jeecarnot/utils/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jeecarnot/models/quoteoftheday.dart';
+import 'package:jeecarnot/providers/otherproviders.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +11,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<Quote> quote = List<Quote>();
+  bool _loading = true;
+
   var style = TextStyle(
     fontSize: 18,
     fontFamily: 'Montserrat',
@@ -16,51 +21,72 @@ class _HomeState extends State<Home> {
     fontWeight: FontWeight.bold,
   );
   @override
+  void initState() {
+    super.initState();
+    getQuote();
+  }
+
+  getQuote() async {
+    QuoteData quoteclass = QuoteData();
+    await quoteclass.getQuote();
+    quote = quoteclass.quote;
+    setState(() {
+      _loading = false;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 9.75,
-            width: MediaQuery.of(context).size.width / 1.20,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Icon(
-                    FontAwesomeIcons.quoteLeft,
-                    size: 20,
-                    color: buttonColor,
+          _loading
+              ? Center(
+                  child: Container(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+              : Container(
+                  height: MediaQuery.of(context).size.height / 9.75,
+                  width: MediaQuery.of(context).size.width / 1.20,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Icon(
+                          FontAwesomeIcons.quoteLeft,
+                          size: 20,
+                          color: buttonColor,
+                        ),
+                      ),
+                      Text(
+                        quote.toString(),
+                        style: style,
+                      ),
+                      Text(
+                        quote.toString(),
+                        style: style,
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Icon(
+                          FontAwesomeIcons.quoteRight,
+                          color: buttonColor,
+                          size: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  "Quote of the day. quote of the day.!!!!!!",
-                  style: style,
-                ),
-                Text(
-                  "Quote of the day. quote of the day.!!!!!!",
-                  style: style,
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Icon(
-                    FontAwesomeIcons.quoteRight,
-                    color: buttonColor,
-                    size: 20,
-                  ),
-                ),
-              ],
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "~ Elon Musk",
+                  quote.toString(),
                   style: TextStyle(
                     fontSize: 18,
                     color: buttonColor,

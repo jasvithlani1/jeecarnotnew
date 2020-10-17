@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:jeecarnot/utils/colors.dart';
 
 class NotifyCard extends StatelessWidget {
+  final String title;
+  NotifyCard({
+    this.title,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +31,7 @@ class NotifyCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(45, 15, 0, 0),
                 child: Text(
-                  'Last week until your plan expires.',
+                  title,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,

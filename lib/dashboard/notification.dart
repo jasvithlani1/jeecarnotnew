@@ -1,8 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:jeecarnot/Widgets/notificationcard.dart';
+import 'package:jeecarnot/models/notificationmodel.dart';
 import 'package:jeecarnot/utils/colors.dart';
+import 'package:jeecarnot/providers/otherproviders.dart';
 
-class Notifications extends StatelessWidget {
+class Notifications extends StatefulWidget {
+  @override
+  _NotificationsState createState() => _NotificationsState();
+}
+
+class _NotificationsState extends State<Notifications> {
+ bool _loading = true;
+
+ List<NotificationModel> notify = List<NotificationModel>();
+
+ @override 
+ void initState(){
+   super.initState();
+   notify = getNotification();
+ }
+
+ getNotification() async {
+    NotificationProvide noticlass = NotificationProvide();
+    await noticlass.getNotification();
+    notify = noticlass.notifylist;
+    setState(() {
+      _loading = false;
+    });
+
+ }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,18 +46,29 @@ class Notifications extends StatelessWidget {
         ),
         backgroundColor: primaryColor,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: NotifyCard(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: NotifyCard(),
-          ),
-        ],
-      ),
+      body: _loading
+          ? Center(
+              child: Container(
+                child: CircularProgressIndicator(),
+              ),
+            )
+          : SingleChildScrollView(
+            child:Column(
+              children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 16),
+                    child: ListView.builder(
+                      physics: ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: notify.length,
+                      itemBuilder: (context, index) {
+                        return NotifyCard(title: notify[index].title,);
+                      },
+                    ),
+                  )
+              ],
+            ) ,
+    ),
     );
   }
 }
